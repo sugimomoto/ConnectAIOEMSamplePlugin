@@ -1,0 +1,24 @@
+{
+  "name": "connect-ai-oem-plugin",
+  "version": "1.0.0",
+  "description": "CData Connect AI OEM デモ環境を Docker で構築する Claude Code プラグイン",
+  "skills": [
+    {
+      "name": "create-oem-demo",
+      "description": "CData Connect AI OEM のデモ環境（ConnectAIOEMSample）を Docker で対話的にセットアップする",
+      "triggers": [
+        "デモ環境を作成して",
+        "OEM環境をセットアップして",
+        "CData Connect AI OEM のデモ環境を作成して"
+      ],
+      "prompt": "skills/create-oem-demo/create-oem-demo.md",
+      "files": "skills/create-oem-demo/",
+      "install": {
+        "command": "skills/create-oem-demo/create-oem-demo.md",
+        "target": "~/.claude/commands/create-oem-demo.md",
+        "skill_files": "skills/create-oem-demo/",
+        "skill_target": "~/.claude/skills/create-oem-demo/"
+      }
+    }
+  ]
+}

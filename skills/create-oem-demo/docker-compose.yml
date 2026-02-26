@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      # ビルドコンテキストをリポジトリルートに設定
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      # 設定ファイルとRSA秘密鍵をホストからマウント（読み取り専用）
+      - ../backend/.env:/app/backend/.env:ro
+      - ../backend/keys:/app/backend/keys:ro
+      # SQLiteデータベースをボリュームで永続化
+      - app_data:/app/instance
+    environment:
+      - FLASK_ENV=production
+      - FLASK_DEBUG=0
+    restart: unless-stopped
+
+volumes:
+  app_data:
