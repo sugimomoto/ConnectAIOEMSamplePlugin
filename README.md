@@ -7,7 +7,8 @@ CData Connect AI OEM のデモ環境（[ConnectAIOEMSample](https://github.com/s
 Claude Code で以下のコマンドを実行してください：
 
 ```
-/plugin install https://github.com/sugimomoto/ConnectAIOEMSamplePlugin
+以下のリポジトリのスキルを私の環境に追加して
+https://github.com/sugimomoto/ConnectAIOEMSamplePlugin
 ```
 
 ## 使い方

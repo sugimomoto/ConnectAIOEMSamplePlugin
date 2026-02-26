@@ -1,5 +1,6 @@
 services:
-  app:
+  connect-ai-oem:
+    container_name: connect-ai-oem
     build:
       # ビルドコンテキストをリポジトリルートに設定
       context: ..
@@ -11,11 +12,11 @@ services:
       - ../backend/.env:/app/backend/.env:ro
       - ../backend/keys:/app/backend/keys:ro
       # SQLiteデータベースをボリュームで永続化
-      - app_data:/app/instance
+      - connect-ai-oem-data:/app/instance
     environment:
       - FLASK_ENV=production
       - FLASK_DEBUG=0
     restart: unless-stopped
 
 volumes:
-  app_data:
+  connect-ai-oem-data:
